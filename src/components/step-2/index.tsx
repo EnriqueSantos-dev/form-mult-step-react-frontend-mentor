@@ -8,6 +8,7 @@ import { ContainerButtonsGroup } from "@/components/layout/container-button-subm
 import Button from "../button";
 import { useFormContext } from "@/context/form-context";
 import steps from "@/data/form-control-steps-data";
+import { Plan } from "@/types";
 
 const { step2 } = formSteps;
 
@@ -32,10 +33,15 @@ export default function Step2() {
     setTypePlanActive((prev) => (prev === "monthly" ? "yearly" : "monthly"));
   }
 
-  const cardInfo = useMemo(
-    () => step2[typePlanActive].find((card) => card.id === planActive),
-    [planActive, typePlanActive]
-  );
+  const cardInfo = useMemo(() => {
+    if (typePlanActive === "monthly") {
+      return step2.monthly.find((item) => item.id === planActive);
+    }
+
+    if (typePlanActive === "yearly") {
+      return step2.yearly.find((item) => item.id === planActive);
+    }
+  }, [planActive, typePlanActive]);
 
   function onSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -43,7 +49,7 @@ export default function Step2() {
     addData({
       ...data,
       currentTypePlan: typePlanActive,
-      plan: cardInfo,
+      plan: cardInfo as Plan,
     });
 
     increaseCurrentStep();

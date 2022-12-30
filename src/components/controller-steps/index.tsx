@@ -1,5 +1,5 @@
 import { useFormContext } from "@/context/form-context";
-import { Step } from "@/types/step";
+import { Step } from "@/types";
 import * as S from "./style";
 
 interface Props {

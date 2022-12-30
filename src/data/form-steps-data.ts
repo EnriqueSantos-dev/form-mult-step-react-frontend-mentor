@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 export default {
   step1: {
     title: "personal info",
@@ -12,7 +10,7 @@ export default {
   },
   step2: {
     title: "Select your plan",
-    subTittle: "you have the option of monthlyly or yearly billing",
+    subTittle: "you have the option of monthly or yearly billing",
     monthly: [
       {
         id: 1,

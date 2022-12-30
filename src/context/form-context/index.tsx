@@ -1,19 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
-import { AddOn } from "@/types";
+import { AddOn, Plan } from "@/types";
 
 interface Data {
   name: string;
   phone: string;
   email: string;
   currentTypePlan: "monthly" | "yearly";
-  plan: {
-    id: number;
-    title: string;
-    price: number;
-    typePrice: "monthly" | "yearly";
-    icon: string;
-    subTitle?: null;
-  };
+  plan: Plan;
   addOns: AddOn[];
 }
 

@@ -14,7 +14,7 @@ export type Plan = {
   id: number;
   title: string;
   price: number;
-  typePrice: "monthly" | "yearly";
+  typePrice: string;
   icon: string;
   subTitle?: null;
 };
