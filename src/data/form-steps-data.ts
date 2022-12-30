@@ -17,7 +17,7 @@ export default {
         title: "Arcade",
         price: 9,
         typePrice: "monthly",
-        icon: "src/assets/images/icon-arcade.svg",
+        icon: "/assets/images/icon-arcade.svg",
         subTitle: null,
       },
       {
@@ -25,7 +25,7 @@ export default {
         title: "Advanced",
         price: 12,
         typePrice: "monthly",
-        icon: "src/assets/images/icon-advanced.svg",
+        icon: "/assets/images/icon-advanced.svg",
         subTitle: null,
       },
       {
@@ -33,7 +33,7 @@ export default {
         title: "Pro",
         price: 15,
         typePrice: "monthly",
-        icon: "src/assets/images/icon-pro.svg",
+        icon: "/assets/images/icon-pro.svg",
         subTitle: null,
       },
     ],
@@ -43,7 +43,7 @@ export default {
         title: "Arcade",
         price: 90,
         typePrice: "yearly",
-        icon: "src/assets/images/icon-arcade.svg",
+        icon: "/assets/images/icon-arcade.svg",
         subTitle: "2 monthlys free",
       },
       {
@@ -51,7 +51,7 @@ export default {
         title: "Advanced",
         price: 120,
         typePrice: "yearly",
-        icon: "src/assets/images/icon-advanced.svg",
+        icon: "/assets/images/icon-advanced.svg",
         subTitle: "2 monthlys free",
       },
       {
@@ -59,7 +59,7 @@ export default {
         title: "Pro",
         price: 150,
         typePrice: "yearly",
-        icon: "src/assets/images/icon-pro.svg",
+        icon: "/assets/images/icon-pro.svg",
         subTitle: "2 monthlys free",
       },
     ],
@@ -115,7 +115,7 @@ export default {
     subTitle: "Double-check everything looks OK before confirming.",
   },
   step5: {
-    icon: "src/assets/images/icon-thank-you.svg",
+    icon: "/assets/images/icon-thank-you.svg",
     title: "Thank you!",
     description:
       "thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgamming.com.",

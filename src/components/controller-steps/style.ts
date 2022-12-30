@@ -5,13 +5,13 @@ export const Container = styled.div`
   justify-content: center;
   gap: 1.5rem;
   align-items: center;
-  background-image: url("src/assets/images/bg-sidebar-mobile.svg");
+  background-image: url("/assets/images/bg-sidebar-mobile.svg");
   background-size: cover;
   background-position: bottom top;
   padding-block: 32px 100px;
 
   @media (min-width: 1024px) {
-    background-image: url("src/assets/images/bg-sidebar-desktop.svg");
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
     width: auto;
     padding-inline: 24px 80px;
     flex-direction: column;
