@@ -69,4 +69,5 @@ export const StepCounterNameText = styled.p`
 export const StepDescription = styled.h2`
   color: var(--white);
   font-weight: bold;
+  font-size: 1.125rem;
 `;

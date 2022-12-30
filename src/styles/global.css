@@ -1,15 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
 }
 
-html {
-  font-family: "Ubuntu", sans-serif;
+:where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -26,4 +23,13 @@ html {
   --white: hsl(0, 0%, 100%);
 
   --breakpoint-mobile: ;
+}
+
+html {
+  font-family: "Ubuntu", monospace;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
 }

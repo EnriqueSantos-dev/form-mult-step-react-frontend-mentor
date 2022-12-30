@@ -61,6 +61,7 @@ export const ContentTextContainer = styled.div`
   h2 {
     color: var(--marine-blue);
     font-weight: 500;
+    font-size: 1.125rem;
   }
 
   p {
