@@ -13,7 +13,16 @@ const { step3 } = formStepsData;
 export default function Step3() {
   const { data, decreaseCurrentStep, addData, increaseCurrentStep } =
     useFormContext();
-  const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>([]);
+  const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>(
+    data?.addOns?.map((addon) => {
+      return {
+        ...addon,
+        price:
+          step3.addOns[data.currentTypePlan].find((a) => a.id === addon.id)
+            ?.price ?? addon.price,
+      };
+    }) ?? []
+  );
 
   const typePlanPriceFormatted =
     data.currentTypePlan === "monthly" ? "/mo" : "/yr";
@@ -28,19 +37,24 @@ export default function Step3() {
 
   const handleChangeSelectedAddOns = (addOn: AddOn) => {
     setSelectedAddOns((prev) => {
-      if (prev.findIndex((a) => a.id === addOn.id) > 0) return prev;
-
-      return [...prev, addOn];
+      const foundedAddon = prev.find((a) => a.id === addOn.id);
+      if (!foundedAddon) return [...prev, addOn];
+      return prev.filter((a) => a.id !== addOn.id);
     });
+  };
+
+  const checkIsSelected = (addOn: AddOn) => {
+    return selectedAddOns.findIndex((a) => a.id === addOn.id) >= 0;
   };
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     addData({ ...data, addOns: selectedAddOns });
-
     increaseCurrentStep();
   };
+
+  console.log(selectedAddOns);
 
   return (
     <S.Container onSubmit={onSubmit}>
@@ -50,7 +64,10 @@ export default function Step3() {
         <S.AddOnsWrapperFlex>
           {step3.addOns[data.currentTypePlan].map((addOn) => (
             <S.LabelAddOnContainer key={addOn.id}>
-              <S.Checkbox onChange={() => handleChangeSelectedAddOns(addOn)} />
+              <S.Checkbox
+                defaultChecked={checkIsSelected(addOn)}
+                onChange={() => handleChangeSelectedAddOns(addOn)}
+              />
               <S.ContentTextContainer>
                 <h2>{addOn.title}</h2>
                 <p>{addOn.description}</p>

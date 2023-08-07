@@ -18,7 +18,7 @@ export default function ControllerSteps({ steps }: Props) {
             {index + 1}
           </S.StepIndicatorButton>
           <S.ContentText>
-            <S.StepCounterNameText>step {index}</S.StepCounterNameText>
+            <S.StepCounterNameText>step {index + 1}</S.StepCounterNameText>
             <S.StepDescription>{step.title}</S.StepDescription>
           </S.ContentText>
         </S.WrapperStepContent>

@@ -20,7 +20,12 @@ interface FormData {
 const schema = Y.object().shape({
   name: Y.string().required(),
   email: Y.string().required().email(),
-  phone: Y.string().required(),
+  phone: Y.string()
+    .transform((value) => value?.replace(/\D/g, "") ?? "")
+    .test((value) => {
+      return new RegExp(/^\d{11}$/).test(value ?? "");
+    })
+    .required(),
 });
 
 export default function Step1() {
@@ -81,6 +86,7 @@ export default function Step1() {
               <p>{errors?.phone?.message}</p>
             </S.LabelTextGroup>
             <Input
+              type="tel"
               placeholder={step1.inputsPlaceholders.phone}
               {...register("phone")}
             />

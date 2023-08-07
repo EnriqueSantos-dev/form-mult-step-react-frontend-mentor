@@ -5,7 +5,7 @@ export default {
     inputsPlaceholders: {
       name: "e.g Stephan King",
       email: "e.g.stephanking@lorem.com",
-      phone: "+1 234 567 890",
+      phone: "99 99999-9999",
     },
   },
   step2: {
